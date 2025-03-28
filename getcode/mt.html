@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANTeam GetCode (Ver mt)</title>
+    <style>
+        * { 
+            box-sizing: border-box; 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+        }
+        body { 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            background: url('/assets/getcode/mt/background.png') no-repeat center center fixed; 
+            background-size: cover; 
+        }
+        .container { 
+            background: rgba(255, 255, 255, 0.2); 
+            backdrop-filter: blur(10px); 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); 
+            text-align: center; 
+            width: 350px; 
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+        }
+        h2 { 
+            margin-bottom: 15px; 
+            font-size: 22px;
+        }
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            outline: none;
+        }
+        input::placeholder { 
+            color: rgba(255, 255, 255, 0.7); 
+        }
+        button { 
+            width: 100%; 
+            padding: 12px; 
+            color: white; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 16px; 
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn-green { 
+            background: #27ae60; 
+        }
+        .btn-green:hover { 
+            background: #2ecc71; 
+            transform: scale(1.05);
+        }
+        .btn-red { 
+            background: #e74c3c; 
+        }
+        .btn-red:hover { 
+            background: #c0392b; 
+            transform: scale(1.05);
+        }
+        .loader { 
+            display: none; 
+            border: 4px solid rgba(255, 255, 255, 0.3); 
+            border-radius: 50%; 
+            border-top: 4px solid #27ae60; 
+            width: 40px; 
+            height: 40px; 
+            animation: spin 1s linear infinite; 
+            margin: 20px auto; 
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        #logged-in { display: none; }
+        .avatar { 
+            width: 90px; 
+            height: 90px; 
+            border-radius: 50%; 
+            border: 3px solid white;
+            margin-bottom: 10px; 
+        }
+    </style>
+</head>
+<body onload="goFullscreen()">
+    <div class="container" id="login-box">
+        <h2>Đăng nhập vào LANTEAM Getcode</h2>
+        <input type="text" id="username" placeholder="Tên người dùng">
+        <input type="password" id="password" placeholder="Mật khẩu">
+        <button class="btn-green" onclick="login()">Đăng Nhập</button>
+        <div class="loader" id="loader"></div>
+    </div>
+    
+    <div class="container" id="logged-in">
+        <img src="https://scontent.fhan2-4.fna.fbcdn.net/v/t39.30808-6/482226435_1175945690812395_8855260708481312190_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=a5f93a&_nc_ohc=U7AaJ6ZqO0IQ7kNvgEpI7ye&_nc_oc=AdnMOw2igBDheUFuh6EyR-P82VPaQc2UYR0Q-x-ZP50ZsMoC2ZteNwJgRuZTqTNS8Ao&_nc_zt=23&_nc_ht=scontent.fhan2-4.fna&_nc_gid=RzQy2jLpudl-pkftU-iOhw&oh=00_AYGPFYVLfhF5BNORUDpOsh4-bBmGdjkVRb8itpZb0AzR2Q&oe=67E20683" class="avatar">
+        <h2>Chào mừng, Nguyễn Minh Thư!</h2>
+		<h3>Username: minhthu</h3>
+        <h3>Người giới thiệu của bạn: vinh</h3>
+        <button class="btn-green" onclick="generateCode()">Lấy mã</button>
+		<button class="btn-green" onclick="minthudayy()">TikTok của bạn</button>
+        <button class="btn-red" onclick="logout()">Đăng xxuất</button>
+		<h4>Tổng phần thưởng bạn đã lấy từ mã: 20 ❤️, 2000 view, 250 follow</h4>
+		<h4>Bạn đang có: 307 follow (dữ liệu có thể không được cập nhật thường xuyên)</h4>
+		<h3>Code by kudodz </h3>
+    </div>
+    
+    <script>
+        function goFullscreen() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+                document.documentElement.msRequestFullscreen();
+            }
+        }
+
+        function login() {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const loader = document.getElementById('loader');
+            if (user === "minhthu" && pass === "minhthu") {
+                loader.style.display = 'block';
+                setTimeout(() => {
+                    document.getElementById('login-box').style.display = 'none';
+                    document.getElementById('logged-in').style.display = 'block';
+                    loader.style.display = 'none';
+                }, 2000);
+            } else {
+                alert("Sai tài khoản hoặc mật khẩu! Hãy thử lại!");
+            }
+        }
+
+        function generateCode() {
+            const randomCode = "LANTeam_" + Math.floor(1000000 + Math.random() * 9000000);
+            alert("Mã của bạn: " + randomCode);
+            sendToGoogleSheet(randomCode);
+        }
+
+        function sendToGoogleSheet(code) {
+            const scriptURL = "https://script.google.com/macros/s/AKfycbyMXnpXX_cLSLFRr4clhCRLnHfkDVBakk_7B0STQGIHyNTnW2SSOP0cNz4q_TeHlwXlzw/exec"; 
+            fetch(scriptURL, {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams({ "code": code })
+            })
+            .then(response => response.text())
+            .then(data => console.log("Gửi thành công: ", data))
+            .catch(error => console.error("Lỗi khi gửi: ", error));
+        }
+
+        function logout() {
+            document.getElementById('logged-in').style.display = 'none';
+            document.getElementById('login-box').style.display = 'block';
+        }
+		
+		function minthudayy() {
+			window.open("https://tiktok.com/@minthudayy2?utm_source=lanteam", "_blank");
+			console.log("Redirect Successfully! from LANTeam Web")
+		}
+		
+    </script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+{HTTPSconfigGetCode}="https://lanteamapi.vn/config/getcode?authentication=aHR0cHM6Ly95b3V0dS5iZS9kUXc0dzlXZ1hjUT9zaT1IUHd0NHRkb0JTRWNocGVO"
+{HTTPSupdateAPI}="https://lanteamapi.vn\/\//update\/\/AuthenticationVer=1r42cf//\\/?authentication=aHR0cHM6Ly95b3V0dS5iZS81TVptU0p0UDdmRT9zaT15WkFxRS1LLVdqU01nRE02"
+{{updateAuthentication}}=">|\..\.\.\..\....\\\\/\//\\\////Authentication__Update"
+{AuthenticationApply}=> "aHR0cHM6Ly95b3V0dS5iZS81TVptU0p0UDdmRT9zaT15WkFxRS1LLVdqU01nRE02"
