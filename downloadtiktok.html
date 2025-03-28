@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tải Video TikTok Không Logo</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #222; color: white; }
+        .container { max-width: 500px; margin: auto; background: #333; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); }
+        input, button { width: 100%; padding: 10px; margin-top: 10px; border: none; border-radius: 5px; }
+        input { background: #444; color: white; border: 1px solid #555; }
+        button { background: #007bff; color: white; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #0056b3; }
+        img { width: 100%; margin-top: 20px; border-radius: 5px; display: none; }
+        #downloadButton, #retryButton { display: none; }
+        .loader { display: none; border: 4px solid rgba(255,255,255,0.3); border-radius: 50%; border-top: 4px solid white; width: 50px; height: 50px; animation: spin 1s linear infinite; margin: 20px auto; }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+    </style>
+    <script>
+        function checkVideo() {
+            let loading = document.getElementById("loading");
+            let inputUrl = document.getElementById("videoUrl").value;
+
+            if (!inputUrl.includes("tiktok.com")) {
+                alert("Vui lòng nhập một link TikTok hợp lệ!");
+                return;
+            }
+
+            loading.style.display = "block";
+            let apiUrl = `https://www.tikwm.com/api/?url=${encodeURIComponent(inputUrl)}`;
+
+            fetch(apiUrl)
+                .then(res => res.json())
+                .then(data => {
+                    loading.style.display = "none";
+
+                    if (data && data.data) {
+                        let videoUrl = data.data.play;
+                        let thumbnailUrl = data.data.cover;
+                        let videoId = data.data.id;
+
+                        let img = document.getElementById("thumbnail");
+                        img.src = thumbnailUrl;
+                        img.style.display = "block";
+
+                        let downloadButton = document.getElementById("downloadButton");
+                        downloadButton.style.display = "block";
+                        downloadButton.setAttribute("data-url", videoUrl);
+                        downloadButton.setAttribute("data-id", videoId);
+
+                        document.getElementById("retryButton").style.display = "block";
+                    } else {
+                        alert("Không tìm thấy video. Vui lòng thử lại!");
+                    }
+                })
+                .catch(() => {
+                    loading.style.display = "none";
+                    alert("Lỗi khi tải video. Vui lòng thử lại!");
+                });
+        }
+
+        async function downloadVideo() {
+            let videoUrl = document.getElementById("downloadButton").getAttribute("data-url");
+            let videoId = document.getElementById("downloadButton").getAttribute("data-id");
+
+            let response = await fetch(videoUrl);
+            let blob = await response.blob();
+            let url = window.URL.createObjectURL(blob);
+
+            let a = document.createElement("a");
+            a.href = url;
+            a.download = `LANTeam_${videoId}.mp4`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+
+        function resetForm() {
+            document.getElementById("videoUrl").value = "";
+            document.getElementById("thumbnail").style.display = "none";
+            document.getElementById("downloadButton").style.display = "none";
+            document.getElementById("retryButton").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Tải Video TikTok Không Logo by kudodz</h2>
+        <input type="text" id="videoUrl" placeholder="Nhập link TikTok">
+        <button onclick="checkVideo()">Kiểm tra</button>
+        <div class="loader" id="loading"></div>
+        <img id="thumbnail" alt="Thumbnail video">
+        <button id="downloadButton" onclick="downloadVideo()">Tải xuống</button>
+        <button id="retryButton" onclick="resetForm()">Tải video khác</button>
+    </div>
+</body>
+</html>
