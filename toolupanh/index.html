@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Images</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+        body {
+            background: url('/assets/getcode/mt/background.png') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .upload-container {
+            width: 420px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            color: white;
+            animation: fadeIn 0.6s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .upload-box {
+            border: 2px dashed rgba(255, 255, 255, 0.6);
+            padding: 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .upload-box:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        input {
+            display: none;
+        }
+        .preview {
+            display: none;
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+            transition: 0.3s ease-in-out;
+        }
+        .upload-btn {
+            display: none;
+            width: 100%;
+            padding: 12px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(45deg, #ff7eb3, #ff2a68);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .upload-btn:hover {
+            box-shadow: 0px 0px 10px #ff2a68;
+        }
+        .loading {
+            display: none;
+            margin-top: 15px;
+            font-size: 18px;
+            color: #ffeb3b;
+            font-weight: bold;
+        }
+        .result {
+            margin-top: 15px;
+            font-size: 16px;
+        }
+        .copy-btn {
+            display: none;
+            margin-top: 10px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="upload-container">
+        <h2>🚀 Upload Ảnh Lên Imgur</h2>
+        
+        <label class="upload-box" for="fileInput">
+            <p>📸 Chọn ảnh để upload</p>
+        </label>
+        <input type="file" id="fileInput">
+        
+        <img id="preview" class="preview">
+        <button id="uploadBtn" class="upload-btn">🚀 Upload</button>
+
+        <div id="loading" class="loading">⏳ Đang tải lên...</div>
+        <p id="result" class="result"></p>
+        <button id="copyBtn" class="copy-btn">📋 Copy Link</button>
+    </div>
+
+    <script>
+        const fileInput = document.getElementById("fileInput");
+        const uploadBtn = document.getElementById("uploadBtn");
+        const preview = document.getElementById("preview");
+        const loading = document.getElementById("loading");
+        const result = document.getElementById("result");
+        const copyBtn = document.getElementById("copyBtn");
+
+        fileInput.addEventListener("change", function () {
+            if (fileInput.files.length > 0) {
+                const file = fileInput.files[0];
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                    uploadBtn.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        async function uploadImage() {
+            if (fileInput.files.length === 0) {
+                result.innerText = "⚠️ Vui lòng chọn một ảnh!";
+                return;
+            }
+
+            const file = fileInput.files[0];
+            const reader = new FileReader();
+
+            reader.onload = async function () {
+                const base64Image = reader.result.split(',')[1];
+                const CLIENT_ID = "f4bc5a474f0d92b";
+
+                loading.style.display = "block";
+                uploadBtn.disabled = true;
+                uploadBtn.style.opacity = "0.6";
+                result.innerText = "";
+                copyBtn.style.display = "none";
+
+                try {
+                    const response = await fetch("https://api.imgur.com/3/image", {
+                        method: "POST",
+                        headers: {
+                            "Authorization": `Client-ID ${CLIENT_ID}`,
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ image: base64Image })
+                    });
+
+                    const resultData = await response.json();
+                    loading.style.display = "none";
+                    uploadBtn.disabled = false;
+                    uploadBtn.style.opacity = "1";
+
+                    if (resultData.success) {
+                        const imageUrl = resultData.data.link;
+                        result.innerHTML = `✅ <a href="${imageUrl}" target="_blank" style="color: #ffeb3b;">Xem ảnh</a>`;
+                        copyBtn.style.display = "block";
+                        copyBtn.onclick = function () {
+                            navigator.clipboard.writeText(imageUrl);
+                            copyBtn.innerText = "✅ Đã copy!";
+                            setTimeout(() => copyBtn.innerText = "📋 Copy Link", 2000);
+                        };
+                    } else {
+                        result.innerText = "❌ Lỗi khi upload ảnh!";
+                    }
+                } catch (error) {
+                    loading.style.display = "none";
+                    uploadBtn.disabled = false;
+                    uploadBtn.style.opacity = "1";
+                    result.innerText = "❌ Lỗi kết nối đến API LANTeam / Imgur!";
+                }
+            };
+
+            reader.readAsDataURL(file);
+        }
+
+        uploadBtn.addEventListener("click", uploadImage);
+    </script>
+
+</body>
+</html>
