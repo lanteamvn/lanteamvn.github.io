@@ -1,0 +1,139 @@
+/* style.css */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 80%;
+    max-width: 700px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    color: #2e384d;
+    margin-bottom: 10px;
+}
+
+header p.tagline {
+    color: #777;
+    font-size: 1.1em;
+}
+
+.info-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.info-box h2 {
+    color: #337ab7;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row .label {
+    color: #555;
+    font-weight: bold;
+}
+
+.info-row .value {
+    color: #333;
+}
+
+.info-row .value.loading {
+    font-style: italic;
+    color: #999;
+}
+
+#advanced-tools {
+    text-align: left; /* Changed to left align for better readability of tools */
+    color: #777;
+}
+
+#advanced-tools h3 {
+    color: #555;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#advanced-tools .form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#advanced-tools .form-row label {
+    width: 120px;
+    color: #555;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#advanced-tools .form-row input[type="text"],
+#advanced-tools .form-row input[type="number"],
+#advanced-tools .form-row select {
+    flex-grow: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#advanced-tools button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+#advanced-tools button:hover {
+    background-color: #0056b3;
+}
+
+#advanced-tools .result {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    white-space: pre-wrap; /* Preserve formatting for Whois output */
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+    font-size: 0.9em;
+}
