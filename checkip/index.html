@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANTeam CheckIP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- Developer: kudodz -->
+<body>
+    <div class="container">
+        <header>
+            <h1>Kiểm tra IP của bạn</h1>
+            <p class="tagline">Xem địa chỉ IP, vị trí, thông tin mạng và trình duyệt.</p>
+            <p class="tagline">Developer: kudodz</p>
+            <p class="tagline">Telegram: @kudo1004</p>
+        </header>
+
+        <section id="ip-info" class="info-box">
+            <h2>Thông tin IP</h2>
+            <div class="info-row">
+                <span class="label">Địa chỉ IP:</span>
+                <span id="ip-address" class="value loading">Đang tải...</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Vị trí:</span>
+                <span id="location" class="value loading">Đang tải...</span>
+            </div>
+            <div class="info-row">
+                <span class="label">ISP:</span>
+                <span id="isp" class="value loading">Đang tải...</span>
+            </div>
+        </section>
+
+        <section id="browser-info" class="info-box">
+            <h2>Thông tin Trình duyệt</h2>
+            <div class="info-row">
+                <span class="label">Ngôn ngữ:</span>
+                <span id="language" class="value">-</span>
+            </div>
+            <div class="info-row">
+                <span class="label">JavaScript:</span>
+                <span id="javascript-enabled" class="value">-</span>
+            </div>
+            <div class="info-row">
+                <span class="label">Hệ điều hành (ước tính):</span>
+                <span id="os" class="value">-</span>
+            </div>
+            <div class="info-row">
+                <span class="label">User Agent:</span>
+                <span id="user-agent" class="value">-</span>
+            </div>
+        </section>
+
+        <section id="advanced-tools" class="info-box">
+            <h2>Công cụ Nâng cao (Giới hạn chỉ Frontend)</h2>
+
+            <div id="dns-lookup-tool-client-only">
+                <h3>DNS Lookup (Client-Side - Giới hạn)</h3>
+                <p>Sử dụng API công cộng (Cloudflare) - có thể giới hạn về loại bản ghi.</p>
+                <div class="form-row">
+                    <label for="dns-hostname-client-only">Hostname:</label>
+                    <input type="text" id="dns-hostname-client-only" placeholder="Nhập hostname">
+                </div>
+                <button id="dns-lookup-button-client-only">Tra cứu DNS</button>
+                <div id="dns-lookup-result-client-only" class="result"></div>
+            </div>
+
+            <p>Các công cụ kiểm tra cổng, Whois và Ping đầy đủ yêu cầu một backend.</p>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 LANTeam</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
