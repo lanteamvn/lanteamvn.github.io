@@ -8,10 +8,10 @@ tips.forEach(tip => {
   card.innerHTML = `
     <div class="tip-title">${tip.title}</div>
     <div class="tip-desc">${tip.shortDesc}</div>
-    <div class="tip-meta">📅 ${tip.date} &nbsp;|&nbsp; 🖥️ ${tip.os}</div>
+    <div class="tip-meta">📅 ${tip.date} &nbsp;  &nbsp; 🖥️ ${tip.os}</div>
   `;
   card.addEventListener('click', () => {
-    window.location.href = `post?id=${tip.id}`;
+    window.location.href = `post.html?id=${tip.id}`;
   });
   list.appendChild(card);
 });
