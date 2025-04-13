@@ -1,4 +1,20 @@
 export const tips = [
+  {
+    id: "tutdame",
+    title: "CÁC TUT DAME TỔNG HỢP",
+    shortDesc: "Tổng hợp các tut dame tiktok by kudodz và nozilaz và các nguồn khác.",
+    content: `
+      <h2>⚠️ LƯU Ý: CÁC NGUỒN LINK ĐƯỢC TỔNG HỢP TỪ NHIỀU NƠI KHÁC NHAU, NÊN CÓ THỂ KHÔNG ĐÚNG HOÀN TOÀN.</h2>
+      <p>Các tut dame cũng có thể không được cập nhật thường xuyên. Các tut dame khác chúng tôi sẽ thường xuyên cập nhật tại Channel Telegram của chúng tôi.</p>
+      <p>Channel Telegram: <a href="//t.me/ShareTutmxhZx">@ShareTutmxhZx</a></p>
+      <p>contact me: <a href="//t.me/kudo1004">@kudo1004</a>, <a href="https://t.me/nozilaz">@nozilaz</a> </p>
+      <p>Tut Dame TikTok 1: https://vi.anotepad.com/notes/d9fm7yet</p>
+      `,
+    author: "kudodz ✅, nozilaz ✅, TrickerLor2030",
+    date: "13/04/2025, 11:44 AM - UTC+7",
+    os: "Tất cả nền tảng",
+    tags: ["tiktok", "dame", "hack"]
+  },
     {
       id: "cach-doi-mat-khau-windows-linux-macos",
       title: "Mẹo: Đổi mật khẩu Windows, Linux, macOS",
@@ -15,7 +31,8 @@ export const tips = [
       `,
       author: "kudodz ✅",
       date: "13/04/2025, 11:44 AM - UTC+7",
-      os: "Windows, Linux, macOS"
+      os: "Windows, Linux, macOS",
+      tags: ["windows", "linux", "macos", "terminal", "huongdan", "hacktricks"]
     },
 
     {
@@ -92,8 +109,9 @@ export const tips = [
       
       `,
       author: "nozilaz ✅",
-      date: "13/04/2025, 11:44 AM - UTC+7",
-      os: "Windows, Linux, macOS"
+      date: "13/04/2025, 12:37 AM - UTC+7",
+      os: "Tác giả chưa quyết định.",
+      tags: ["windows", "linux", "macos", "taixuong", "download-link", "huongdan", "hacktricks"]
     }
   ];
   
