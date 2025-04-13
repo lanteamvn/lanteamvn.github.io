@@ -8,7 +8,7 @@ const detail = document.getElementById('tip-detail');
 if (tip) {
   detail.innerHTML = `
     <h2>${tip.title}</h2>
-    <div class="meta">📅 ${tip.date} | 👤 ${tip.author} | 🖥️ ${tip.os}</div>
+    <div class="meta">📅 ${tip.date} | 👤 ${tip.author} | 🖥️ ${tip.os} | 🔖 Tags: ${tip.tags}</div>
     ${tip.content}
   `;
 } else {
