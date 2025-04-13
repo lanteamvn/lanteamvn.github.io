@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f9fafb;
+    color: #1f2937;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+  }
+  
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .tip-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .tip-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .tip-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tip-desc, .tip-meta {
+    font-size: 0.9rem;
+    color: #4b5563;
+  }
+  
+  .tip-detail h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tip-detail p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+  
+  .tip-detail .meta {
+    font-size: 0.85rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+  }
+  
+  .back-btn {
+    text-decoration: none;
+    color: #2563eb;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  
