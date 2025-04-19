@@ -1,4 +1,18 @@
+// Build with LAN Bot
+// Telegram: @kudo1004
 export const tips = [
+  {
+    id: "tai-khoan-distrokid-free-1-nam",
+    title: "Tài Khoản DistroKid Free 1 Năm",
+    shortDesc: "No bio yet.",
+    content: `
+      <h2<b style="color: red;">Bài viết này không có sẵn. Bài viết này đã bị xoá vì vi phạm bản quyền của thương hiệu "DistroKid" và tài khoản tác giả (@xdpi) đã bị cấm do vi phạm bản quyền quá nhiều lần bởi: t.me/sharetutmxhzx ✅, DistroKid ✅, TrickerLor2030 ✅, Hệ thống [👨‍🔧 BOT QUẢN LÝ] ✅, Hethong, user178654</b>. Nếu bạn hỏi, tên của 1 số người là user{số ngẫu nhiên} thì người đó đã bị cấm. Người bình thường sẽ không được đặt tên như vậy.</h2>
+      `,
+    author: "@xdpi (user1272) ✅ [ADMIN👨‍🔧]",
+    date: "19/04/2025, 15:02 CH - UTC+7",
+    os: "Tác giả chưa quyết định.",
+    tags: ["Đã sửa lại bởi: @Hệ thống ✅ [👨‍🔧 BOT QUẢN LÝ]"]
+  },
   {
     id: "tutdame",
     title: "CÁC TUT DAME TỔNG HỢP",
@@ -10,8 +24,8 @@ export const tips = [
       <p>contact me: <a href="//t.me/kudo1004">@kudo1004</a>, <a href="https://t.me/nozilaz">@nozilaz</a> </p>
       <p>Tut Dame TikTok 1: https://vi.anotepad.com/notes/d9fm7yet</p>
       `,
-    author: "kudodz ✅, nozilaz ✅, TrickerLor2030",
-    date: "13/04/2025, 11:44 AM - UTC+7",
+    author: "@kudodz (kudodz) ✅ [ADMIN👨‍🔧], @nozilaz (tg: nozilaz) ✅ [ADMIN👨‍🔧], @trickloton2030 (𝐸𝑚 𝑆𝑒̃ 𝐿𝑎̀ 𝑀𝑜̣̂𝑡 𝑇𝑟𝑖𝑐𝑘𝑒𝑟 𝐿𝑜̉)",
+    date: "13/04/2025, 13:17 CH - UTC+7",
     os: "Tất cả nền tảng",
     tags: ["tiktok", "dame", "hack"]
   },
@@ -29,7 +43,7 @@ export const tips = [
         <p>Nếu bạn muốn đổi cho một người dùng khác, hãy dùng: <code>sudo passwd [tên người dùng]</code>.</p>
   
       `,
-      author: "kudodz ✅",
+      author: "@kudodz (kudodz) ✅",
       date: "13/04/2025, 11:44 AM - UTC+7",
       os: "Windows, Linux, macOS",
       tags: ["windows", "linux", "macos", "terminal", "huongdan", "hacktricks"]
@@ -108,7 +122,7 @@ export const tips = [
         <p>Adobe Spark Animation Forum: <a href="https://spark.adobe.com/animation-forum/">https://spark.adobe.com/animation-forum/</a></p>
       
       `,
-      author: "nozilaz ✅",
+      author: "@nozilaz (tg: nozilaz) ✅ [ADMIN👨‍🔧]",
       date: "13/04/2025, 12:37 AM - UTC+7",
       os: "Tác giả chưa quyết định.",
       tags: ["windows", "linux", "macos", "taixuong", "download-link", "huongdan", "hacktricks"]
