@@ -1,4 +1,4 @@
-import { tips } from './data.js';
+import { tips } from './tips-data.js';
 
 const params = new URLSearchParams(window.location.search);
 const tipId = params.get('id');
