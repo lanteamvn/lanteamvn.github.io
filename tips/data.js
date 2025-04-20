@@ -1,4 +1,3 @@
-// thử code 0 k express react node lạ quá :))
 export const tips = [
   {
     id: "tutdamefb",
