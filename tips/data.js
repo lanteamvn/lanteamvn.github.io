@@ -1,6 +1,34 @@
-// Build with LAN Bot
-// Telegram: @kudo1004
+// thử code 0 k express react node lạ quá :))
 export const tips = [
+  {
+    id: "tutdamefb",
+    title: "Tut Dame Fb Không Cần Prx/Vpn",
+    shortDesc: "No bio yet.",
+    content: `
+      <h2><b style="color: red;">Bài viết này không có sẵn. Bài viết này đã bị cấm vì vi phạm tiêu chuẩn Cộng đồng của chúng tôi, và còn vi phạm bản quyền từ "kudodz". Tài khoản tác giả của bài viết này (@K_U__D0__DZZ123realreal) cũng đã bị cấm vì mạo danh "@kudodz (kudodz) - ADMIN" do một báo cáo của ai đó (Ẩn danh cho người báo cáo). </b></h2>
+      `,
+    author: "@Hệ thống ✅ [👨‍🔧 BOT QUẢN LÝ]]",
+    date: "20/04/2025 15:07 - UTC+7",
+    os: "Tác giả chưa quyết định.",
+    tags: ["music"],
+    lastupdate: "20/04/2025 15:07 - UTC+7"
+  },
+  {
+    id: "share-isrc-code",
+    title: "Share Mã ISRC Cập Nhật Thường Xuyên",
+    shortDesc: "ISRC CODE",
+    content: `
+      <p>Hôm nay, chúng tôi sẽ mang đến cho bạn rất nhiều mã ISRC! Được cập nhật thường xuyên nha anh em!</p>
+      <p>Sẽ có các link Mediafire hoặc Google Drive có các File .TXT chứa các mã ISRC được chúng tôi làm ra! Dùng cứ yên tâm nha!</p>
+      <p>Mỗi file có 10000 dòng. Và sẽ được cập nhật từ từ nha, lần đầu là 1 file.</p>
+      <p>File 1: https://www.mediafire.com/file/zfk1t3wawu8cwar/isrc_code_1.txt/file hoặc tại đây: <a href="https://www.mediafire.com/file/zfk1t3wawu8cwar/isrc_code_1.txt/file">nè</a></p>
+      `,
+    author: "@Hệ thống ✅ [👨‍🔧 BOT QUẢN LÝ]]",
+    date: "20/04/2025 15:07 - UTC+7",
+    os: "Tác giả chưa quyết định.",
+    tags: ["music"],
+    lastupdate: "20/04/2025 15:07 - UTC+7"
+  },
   {
     id: "tai-khoan-distrokid-free-1-nam",
     title: "Tài Khoản DistroKid Free 1 Năm",
@@ -11,7 +39,8 @@ export const tips = [
     author: "@xdpi (user1272) ✅ [ADMIN👨‍🔧]",
     date: "19/04/2025, 15:02 CH - UTC+7",
     os: "Tác giả chưa quyết định.",
-    tags: ["Đã sửa lại bởi: @Hệ thống ✅ [👨‍🔧 BOT QUẢN LÝ]"]
+    tags: ["Đã sửa lại bởi: @Hệ thống ✅ [👨‍🔧 BOT QUẢN LÝ]"],
+    lastupdate: "19/04/2025, 19:37 CH - UTC+7"
   },
   {
     id: "tutdame",
@@ -27,7 +56,8 @@ export const tips = [
     author: "@kudodz (kudodz) ✅ [ADMIN👨‍🔧], @nozilaz (tg: nozilaz) ✅ [ADMIN👨‍🔧], @trickloton2030 (𝐸𝑚 𝑆𝑒̃ 𝐿𝑎̀ 𝑀𝑜̣̂𝑡 𝑇𝑟𝑖𝑐𝑘𝑒𝑟 𝐿𝑜̉)",
     date: "13/04/2025, 13:17 CH - UTC+7",
     os: "Tất cả nền tảng",
-    tags: ["tiktok", "dame", "hack"]
+    tags: ["tiktok", "dame", "hack"],
+    lastupdate: "13/04/2025, 13:17 CH - UTC+7"
   },
     {
       id: "cach-doi-mat-khau-windows-linux-macos",
@@ -41,12 +71,12 @@ export const tips = [
         <p><code>passwd</code></p>
         <p>Nhập mật khẩu hiện tại và sau đó nhập mật khẩu mới.</p>
         <p>Nếu bạn muốn đổi cho một người dùng khác, hãy dùng: <code>sudo passwd [tên người dùng]</code>.</p>
-  
       `,
       author: "@kudodz (kudodz) ✅",
       date: "13/04/2025, 11:44 AM - UTC+7",
       os: "Windows, Linux, macOS",
       tags: ["windows", "linux", "macos", "terminal", "huongdan", "hacktricks"]
+      lastupdate: "13/04/2025, 11:44 AM - UTC+7"
     },
 
     {
@@ -122,10 +152,11 @@ export const tips = [
         <p>Adobe Spark Animation Forum: <a href="https://spark.adobe.com/animation-forum/">https://spark.adobe.com/animation-forum/</a></p>
       
       `,
-      author: "@nozilaz (tg: nozilaz) ✅ [ADMIN👨‍🔧]",
+      author: "@nozilaz (tg: nozilaz) ✅ [ADMIN👨‍🔧], @Hệ thống ✅ [👨‍🔧 BOT QUẢN LÝ]",
       date: "13/04/2025, 12:37 AM - UTC+7",
       os: "Tác giả chưa quyết định.",
-      tags: ["windows", "linux", "macos", "taixuong", "download-link", "huongdan", "hacktricks"]
+      tags: ["windows", "linux", "macos", "taixuong", "download-link", "huongdan", "hacktricks"],
+      lastupdate: "13/04/2025, 13:11 AM - UTC+7"
     }
   ];
   
