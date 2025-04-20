@@ -1,4 +1,4 @@
-import { tips } from './tips-data.js';
+import { tips } from './data.js';
 
 const list = document.getElementById('tips-list');
 
